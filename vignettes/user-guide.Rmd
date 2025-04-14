@@ -1,0 +1,20 @@
+--- 
+title: "Getting Started with RMap" 
+output: rmarkdown::html_vignette 
+vignette: > 
+  %\VignetteIndexEntry{Getting Started with RMap} 
+  %\VignetteEngine{knitr::rmarkdown} 
+  %\VignetteEncoding{UTF-8} 
+--- 
+ 
+```{r, include = FALSE} 
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>") 
+``` 
+ 
+```{r setup} 
+library(RMap) 
+``` 
+ 
+# Introduction 
+ 
+This vignette provides an introduction to using the RMap package. 

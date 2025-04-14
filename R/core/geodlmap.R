@@ -4,6 +4,7 @@
 
 #' @title geodlmap Class
 #' @description R-based Geospatial Mapping Framework for Cloud Environments
+#' @importFrom leaflet leaflet addTiles setView
 #' @export
 geodlmap <- R6::R6Class(
   "geodlmap",
@@ -19,9 +20,9 @@ geodlmap <- R6::R6Class(
     #' @description Create a new geodlmap instance
     #' @return geodlmap object
     initialize = function() {
-      self$map <- leaflet() %>%
-        addTiles() %>%
-        setView(lng = 0, lat = 0, zoom = 2)
+      self$map <- leaflet::leaflet() %>%
+        leaflet::addTiles() %>%
+        leaflet::setView(lng = 0, lat = 0, zoom = 2)
       
       message("geodlmap initialized successfully")
       return(invisible(self))

@@ -1,1 +1,0 @@
-# Main RMap class definition 

@@ -1,1 +1,0 @@
-# Split map comparison widget 

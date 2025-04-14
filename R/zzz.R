@@ -1,3 +1,22 @@
+# ===========================================================
+# File: R/zzz.R
+# ===========================================================
+
+# Package imports
+#' @import leaflet
+#' @import leafem
+#' @import sf
+#' @import raster
+#' @import htmltools
+#' @import htmlwidgets
+#' @import RColorBrewer
+#' @import viridisLite
+#' @import R6
+#' @importFrom leaflet.extras addDrawToolbar removeDrawToolbar
+#' @importFrom leaflet.extras2 addMeasurePathToolbar
+#' @importFrom jsonlite fromJSON toJSON
+NULL
+
 # Package loading script 
 #' @title Package loader
 #' @description Loads all components of the geodlmap package
@@ -5,6 +24,7 @@
 
 # This file ensures modules are loaded in the correct order
 
+# When the package is loaded
 .onLoad <- function(libname, pkgname) {
   # Core modules
   source(system.file("R", "core", "init.R", package = "geodlmap"))
@@ -33,6 +53,19 @@
   source(system.file("R", "exports", "export.R", package = "geodlmap"))
 }
 
+# When the package is attached
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage("geodlmap v0.1.0 loaded successfully. Type ?geodlmap for help.")
+  packageStartupMessage("geodlmap ", utils::packageVersion("geodlmap"), " loaded successfully.")
+  packageStartupMessage("For documentation, run: ?geodlmap")
 }
+
+# Re-export the pipe operator
+#' Pipe operator
+#'
+#' @name %>%
+#' @rdname pipe
+#' @keywords internal
+#' @export
+#' @importFrom magrittr %>%
+#' @usage lhs \%>\% rhs
+NULL
